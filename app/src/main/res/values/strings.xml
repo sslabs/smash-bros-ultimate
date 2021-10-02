@@ -1,3 +1,10 @@
 <resources>
+    <!--  General  -->
     <string name="app_name">Smash Bros Ultimate</string>
+
+    <!--  Walkthrough screen  -->
+    <string name="walkthrough_fighter_1">Access our\nExtented Catalog</string>
+    <string name="walkthrough_fighter_2">Filter Universes</string>
+    <string name="walkthrough_fighter_3">And More…</string>
+    <string name="txt_walkthrough_button">Next</string>
 </resources>

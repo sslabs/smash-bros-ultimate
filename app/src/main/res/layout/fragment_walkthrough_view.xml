@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_walkthrough"
+    tools:context=".ui.welcome.WalkthroughView">
+
+    <ImageView
+        android:id="@+id/walkthrough_fighter_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/walkthrough_fighter_margin_top"
+        android:alpha="0.57"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:srcCompat="@drawable/wt_fighter1"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/walkthrough_headline"
+        style="@style/WalkthroughHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/walkthrough_headline_margin_bottom"
+        app:layout_constraintBottom_toTopOf="@id/walkthrough_next_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Access our\nExtented Catalog" />
+    
+    <Button
+        android:id="@+id/walkthrough_next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/walkthrough_button_margin_bottom"
+        android:background="@drawable/bg_button_radius_27"
+        android:text="@string/txt_walkthrough_button"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
