@@ -2,7 +2,7 @@ package com.sslabs.smashbrosultimate.di.module
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.sslabs.smashbrosultimate.BASE_URL
+import com.sslabs.smashbrosultimate.ApiConstants
 import com.sslabs.smashbrosultimate.data.api.SmashBrosApi
 import dagger.Module
 import dagger.Provides
@@ -45,7 +45,7 @@ object ApiModule {
     @Provides
     fun provideApiBuilder(client: OkHttpClient, gson: Gson): Retrofit.Builder =
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(ApiConstants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
 

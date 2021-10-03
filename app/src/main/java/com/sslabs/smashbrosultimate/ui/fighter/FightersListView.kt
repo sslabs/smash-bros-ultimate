@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.sslabs.smashbrosultimate.data.model.Fighter
+import com.sslabs.smashbrosultimate.data.model.Universe
 import com.sslabs.smashbrosultimate.databinding.FragmentFightersListViewBinding
 import com.sslabs.smashbrosultimate.util.DataState
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,8 +19,10 @@ class FightersListView : Fragment() {
     private lateinit var binding: FragmentFightersListViewBinding
     private val viewModel: FighterListViewModel by viewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentFightersListViewBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -34,6 +37,7 @@ class FightersListView : Fragment() {
         observeData()
 
         viewModel.setStateEvent(FighterListStateEvent.GetAllFightersEvent)
+        viewModel.setStateEvent(FighterListStateEvent.GetAllUniversesEvent)
     }
 
     private fun initViews() {
@@ -42,9 +46,28 @@ class FightersListView : Fragment() {
 
     private fun observeData() {
         viewModel.fighterData.observe(viewLifecycleOwner, {
-            when(it) {
+            when (it) {
                 is DataState.Success<List<Fighter>> -> {
-                    binding.testTextview.text = it.data.joinToString { fighter -> fighter.name }
+                    binding.fightersTestTextview.text =
+                        it.data.joinToString { fighter -> fighter.name }
+                    displayProgressBar(false)
+                }
+                is DataState.Error -> {
+                    displayProgressBar(false)
+                    displayError(it.exception.message)
+                    Timber.e(it.exception)
+                }
+                is DataState.Loading -> {
+                    displayProgressBar(true)
+                }
+            }
+        })
+
+        viewModel.universeData.observe(viewLifecycleOwner, {
+            when (it) {
+                is DataState.Success<List<Universe>> -> {
+                    binding.universesTestTextview.text =
+                        it.data.joinToString { fighter -> fighter.name }
                     displayProgressBar(false)
                 }
                 is DataState.Error -> {
@@ -60,7 +83,8 @@ class FightersListView : Fragment() {
     }
 
     private fun displayError(message: String?) {
-        binding.testTextview.text = message?: "Unknown error"
+        binding.fightersTestTextview.text = message ?: "Unknown error"
+        binding.universesTestTextview.text = ""
     }
 
     private fun displayProgressBar(isDisplayed: Boolean) {

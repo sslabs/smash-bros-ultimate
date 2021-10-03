@@ -8,9 +8,18 @@
     tools:context=".ui.fighter.FightersListView">
 
     <TextView
-        android:id="@+id/test_textview"
+        android:id="@+id/fighters_test_textview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="something"/>
+
+    <TextView
+        android:id="@+id/universes_test_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/fighters_test_textview"
+        tools:text="another thing"/>
 
     <RelativeLayout
         android:id="@+id/fighters_list_loading"

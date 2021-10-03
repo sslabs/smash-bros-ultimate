@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.sslabs.smashbrosultimate.data.local.db.SmashBrosDatabase
 import com.sslabs.smashbrosultimate.data.local.db.dao.FighterDao
+import com.sslabs.smashbrosultimate.data.local.db.dao.UniverseDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,4 +31,9 @@ object DatabaseModule {
     @Provides
     fun provideFighterDao(smashBrosDatabase: SmashBrosDatabase): FighterDao =
         smashBrosDatabase.fighterDao()
+
+    @Singleton
+    @Provides
+    fun provideUniverseDao(smashBrosDatabase: SmashBrosDatabase): UniverseDao =
+        smashBrosDatabase.universeDao()
 }

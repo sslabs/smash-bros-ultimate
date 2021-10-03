@@ -4,7 +4,7 @@ data class Fighter(
     var id: Int?,
     var name: String,
     var universe: String,
-    var price: String,
+    var price: Double,
     var popular: Boolean,
     var rate: Int,
     var downloads: Int,
