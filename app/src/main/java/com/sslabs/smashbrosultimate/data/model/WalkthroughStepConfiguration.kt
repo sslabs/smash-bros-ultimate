@@ -1,4 +1,4 @@
-package com.sslabs.smashbrosultimate.ui.model
+package com.sslabs.smashbrosultimate.data.model
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes

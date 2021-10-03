@@ -3,7 +3,7 @@ package com.sslabs.smashbrosultimate.ui.welcome
 import androidx.lifecycle.*
 import com.sslabs.smashbrosultimate.R
 import com.sslabs.smashbrosultimate.data.local.pref.IPreferences
-import com.sslabs.smashbrosultimate.ui.model.WalkthroughStepConfiguration
+import com.sslabs.smashbrosultimate.data.model.WalkthroughStepConfiguration
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
