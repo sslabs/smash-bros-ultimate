@@ -17,6 +17,6 @@ class UniverseDbMapper @Inject constructor() : EntityMapper<UniverseCacheEntity,
         UniverseCacheEntity(
             id = domainModel.id,
             name = domainModel.name,
-            description = domainModel.description
+            description = domainModel.description ?: ""
         )
 }

@@ -17,10 +17,10 @@ class FighterRepositoryImpl @Inject constructor(
     private val fighterApiMapper: FighterApiMapper,
 ) : IFighterRepository {
 
-    override suspend fun getAllFighters(): Flow<DataState<List<Fighter>>> = flow {
+    override suspend fun getFighters(universeName: String?): Flow<DataState<List<Fighter>>> = flow {
         emit(DataState.Loading)
         try {
-            val apiFighters = smashBrosApi.getFighters()
+            val apiFighters = smashBrosApi.getFighters(universeName)
             val fighters = fighterApiMapper.mapFromEntityList(apiFighters)
             val dbFighters = fighterCacheMapper.mapToEntityList(fighters)
             fighterDao.deleteAll()

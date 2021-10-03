@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/item_fighter_card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#FBFBFB"
+        app:cardCornerRadius="@dimen/fighter_card_radius"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/item_fighter_image"
+            android:layout_width="@dimen/fighter_card_image_side"
+            android:layout_height="@dimen/fighter_card_image_side"
+            android:scaleType="centerInside"
+            android:layout_margin="@dimen/fighter_card_margin"
+            tools:srcCompat="@drawable/wt_fighter1"
+            tools:ignore="ContentDescription" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/item_fighter_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:layout_marginTop="@dimen/fighter_card_title_margin_top"
+        app:layout_constraintTop_toBottomOf="@id/item_fighter_card"
+        app:layout_constraintStart_toStartOf="@id/item_fighter_card"
+        app:layout_constraintEnd_toEndOf="@id/item_fighter_card"
+        tools:text="Bowser"/>
+
+    <TextView
+        android:id="@+id/item_fighter_universe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        app:layout_constraintTop_toBottomOf="@id/item_fighter_name"
+        app:layout_constraintStart_toStartOf="@id/item_fighter_card"
+        app:layout_constraintEnd_toEndOf="@id/item_fighter_card"
+        tools:text="Mario Bros"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

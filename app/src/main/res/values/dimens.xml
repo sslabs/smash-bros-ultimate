@@ -4,4 +4,8 @@
     <dimen name="walkthrough_fighter_margin_top">49dp</dimen>
     <dimen name="walkthrough_button_margin_bottom">100dp</dimen>
     <dimen name="walkthrough_headline_margin_bottom">69dp</dimen>
+    <dimen name="fighter_card_radius">8dp</dimen>
+    <dimen name="fighter_card_image_side">140dp</dimen>
+    <dimen name="fighter_card_margin">8dp</dimen>
+    <dimen name="fighter_card_title_margin_top">14dp</dimen>
 </resources>

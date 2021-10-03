@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class FighterListViewModel @Inject constructor(
+class SelectFighterViewModel @Inject constructor(
     private val fighterRepository: IFighterRepository,
     private val universeRepository: IUniverseRepository
 ) : ViewModel() {
@@ -27,15 +27,15 @@ class FighterListViewModel @Inject constructor(
     private val _universeData: MutableLiveData<DataState<List<Universe>>> = MutableLiveData()
     val universeData: LiveData<DataState<List<Universe>>> get() = _universeData
 
-    fun setStateEvent(fighterListStateEvent: FighterListStateEvent) {
+    fun setStateEvent(selectFighterStateEvent: SelectFighterStateEvent) {
         viewModelScope.launch {
-            when(fighterListStateEvent) {
-                is FighterListStateEvent.GetAllFightersEvent -> {
-                    fighterRepository.getAllFighters()
+            when (selectFighterStateEvent) {
+                is SelectFighterStateEvent.GetFightersEvent -> {
+                    fighterRepository.getFighters(selectFighterStateEvent.universe?.name)
                         .onEach { _fighterData.value = it }
                         .launchIn(viewModelScope)
                 }
-                is FighterListStateEvent.GetAllUniversesEvent -> {
+                is SelectFighterStateEvent.GetAllUniversesEvent -> {
                     universeRepository.getAllUniverses()
                         .onEach { _universeData.value = it }
                         .launchIn(viewModelScope)
@@ -45,7 +45,7 @@ class FighterListViewModel @Inject constructor(
     }
 }
 
-sealed class FighterListStateEvent {
-    object GetAllFightersEvent: FighterListStateEvent()
-    object GetAllUniversesEvent: FighterListStateEvent()
+sealed class SelectFighterStateEvent {
+    class GetFightersEvent(val universe: Universe? = null) : SelectFighterStateEvent()
+    object GetAllUniversesEvent : SelectFighterStateEvent()
 }

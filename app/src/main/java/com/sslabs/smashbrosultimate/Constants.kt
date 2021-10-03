@@ -4,6 +4,7 @@ object ApiConstants {
     const val BASE_URL = "https://593cdf8fb56f410011e7e7a9.mockapi.io/"
     const val FIGHTERS_PATH = "fighters"
     const val UNIVERSES_PATH = "universes"
+    const val FIGHTERS_UNIVERSE_PARAM = "universe"
 }
 
 object PreferenceConstants {

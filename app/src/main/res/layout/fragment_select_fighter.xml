@@ -5,27 +5,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fighter.FightersListView">
+    tools:context=".ui.fighter.SelectFighterView">
 
-    <TextView
-        android:id="@+id/fighters_test_textview"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/select_fighter_universe_container"
+        android:name="com.sslabs.smashbrosultimate.ui.fighter.UniverseOptionsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="something"/>
+        app:layout_constraintBottom_toTopOf="@id/select_fighter_list_container"
+        tools:layout="@layout/fragment_universe_options"/>
 
-    <TextView
-        android:id="@+id/universes_test_textview"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/select_fighter_list_container"
+        android:name="com.sslabs.smashbrosultimate.ui.fighter.FighterListView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/fighters_test_textview"
-        tools:text="another thing"/>
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/select_fighter_universe_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout="@layout/fragment_fighter_list"/>
 
     <RelativeLayout
-        android:id="@+id/fighters_list_loading"
+        android:id="@+id/select_fighter_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#22000000"
+        android:background="@color/some_gray"
         android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

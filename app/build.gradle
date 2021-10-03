@@ -86,6 +86,9 @@ dependencies {
 
     // Timber
     implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // Imaging
+    implementation "com.squareup.picasso:picasso:$picasso_version"
 }
 
 kapt {

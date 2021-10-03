@@ -7,4 +7,7 @@
     <string name="walkthrough_fighter_2">Filter Universes</string>
     <string name="walkthrough_fighter_3">And More…</string>
     <string name="txt_walkthrough_button">Next</string>
+
+    <!--  Select fighter scree  -->
+    <string name="txt_figther_list_count">Fighters (%1$d)</string>
 </resources>

@@ -30,7 +30,7 @@ object ApiModule {
             Timber.tag("OkHttp").d(it)
         }
         val loggingInterceptor = HttpLoggingInterceptor(logger)
-        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        loggingInterceptor.level = HttpLoggingInterceptor.Level.BASIC
         return loggingInterceptor
     }
 
