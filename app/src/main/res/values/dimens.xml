@@ -8,4 +8,11 @@
     <dimen name="fighter_card_image_side">140dp</dimen>
     <dimen name="fighter_card_margin">8dp</dimen>
     <dimen name="fighter_card_title_margin_top">14dp</dimen>
+    <dimen name="filter_header_margin_start">22dp</dimen>
+    <dimen name="filter_sort_margin_top">29dp</dimen>
+    <dimen name="filter_line_separator_margin_start">8dp</dimen>
+    <dimen name="filter_price_margin_top">16dp</dimen>
+    <dimen name="filter_stars_margin_top">16dp</dimen>
+    <dimen name="filter_button_margin_bottom">73dp</dimen>
+    <dimen name="filter_button_margin_horizontal">32dp</dimen>
 </resources>

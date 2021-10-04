@@ -5,14 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blank"
     tools:context=".ui.fighter.SelectFighterView">
+
+    <include
+        layout="@layout/layout_toolbar"
+        android:id="@+id/select_fighter_toolbar"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/select_fighter_universe_container"
         android:name="com.sslabs.smashbrosultimate.ui.fighter.UniverseOptionsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_fighter_toolbar"
         app:layout_constraintBottom_toTopOf="@id/select_fighter_list_container"
         tools:layout="@layout/fragment_universe_options"/>
 

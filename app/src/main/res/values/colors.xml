@@ -10,4 +10,5 @@
     <color name="soft_gray">#979797</color>
     <color name="some_gray">#22000000</color>
     <color name="more_gray">#FBFBFB</color>
+    <color name="blank">#F2F2F2</color>
 </resources>

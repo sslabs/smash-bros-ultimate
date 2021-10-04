@@ -1,6 +1,10 @@
 <resources>
     <!--  General  -->
     <string name="app_name">Smash Bros Ultimate</string>
+    <string name="txt_toolbar_fighters_title">Fighters</string>
+    <string name="txt_toolbar_filters_title">Filters</string>
+    <string name="txt_toolbar_close">Close</string>
+    <string name="txt_menu_filter">Filter</string>
 
     <!--  Walkthrough screen  -->
     <string name="walkthrough_fighter_1">Access our\nExtented Catalog</string>
@@ -10,4 +14,14 @@
 
     <!--  Select fighter scree  -->
     <string name="txt_figther_list_count">Fighters (%1$d)</string>
+
+    <!--  Filter  -->
+    <string name="txt_filter_sort">Sort by</string>
+    <string name="txt_filter_price">Price</string>
+    <string name="txt_filter_starts">Stars</string>
+    <string name="txt_filters_apply_button">Apply Filters</string>
+    <string name="sort_criteria_ascending">Ascending</string>
+    <string name="sort_criteria_descending">Descending</string>
+    <string name="sort_criteria_rate">Rate</string>
+    <string name="sort_criteria_downloads">Downloads</string>
 </resources>

@@ -51,5 +51,25 @@
         android:id="@+id/fightersListView"
         android:name="com.sslabs.smashbrosultimate.ui.fighter.SelectFighterView"
         android:label="FightersListView"
-        tools:layout="@layout/fragment_select_fighter" />
+        tools:layout="@layout/fragment_select_fighter" >
+        <argument
+            android:name="filters"
+            app:argType="com.sslabs.smashbrosultimate.ui.filter.Filters"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_fightersListView_to_filtersView"
+            app:destination="@id/filtersView" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersView"
+        android:name="com.sslabs.smashbrosultimate.ui.filter.FiltersView"
+        android:label="fragment_filters"
+        tools:layout="@layout/fragment_filters" >
+        <action
+            android:id="@+id/action_filtersView_to_fightersListView"
+            app:destination="@id/fightersListView"
+            app:popUpTo="@id/fightersListView"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

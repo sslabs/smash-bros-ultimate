@@ -53,6 +53,7 @@ class FighterListView : Fragment() {
                     binding.fighterListHeader.text =
                         getString(R.string.txt_figther_list_count, it.data.size)
                     adapter.setData(it.data)
+                    viewModel.filters.value?.let { filters -> adapter.filters = filters }
                 }
                 is DataState.Error -> {
                     Timber.e(it.exception)

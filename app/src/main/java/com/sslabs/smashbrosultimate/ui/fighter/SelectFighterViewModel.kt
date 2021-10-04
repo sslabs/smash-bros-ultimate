@@ -8,6 +8,7 @@ import com.sslabs.smashbrosultimate.data.model.Fighter
 import com.sslabs.smashbrosultimate.data.model.Universe
 import com.sslabs.smashbrosultimate.repository.fighter.IFighterRepository
 import com.sslabs.smashbrosultimate.repository.universe.IUniverseRepository
+import com.sslabs.smashbrosultimate.ui.filter.Filters
 import com.sslabs.smashbrosultimate.util.DataState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -27,6 +28,9 @@ class SelectFighterViewModel @Inject constructor(
     private val _universeData: MutableLiveData<DataState<List<Universe>>> = MutableLiveData()
     val universeData: LiveData<DataState<List<Universe>>> get() = _universeData
 
+    private val _filters: MutableLiveData<Filters?> = MutableLiveData()
+    val filters: LiveData<Filters?> get() = _filters
+
     fun setStateEvent(selectFighterStateEvent: SelectFighterStateEvent) {
         viewModelScope.launch {
             when (selectFighterStateEvent) {
@@ -42,6 +46,10 @@ class SelectFighterViewModel @Inject constructor(
                 }
             }
         }
+    }
+
+    fun setFilters(fighterFilters: Filters?) {
+        _filters.value = fighterFilters
     }
 }
 
